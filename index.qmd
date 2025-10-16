@@ -1,0 +1,86 @@
+---
+title: "Simple Quarto with Matplotlib"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Simple Quarto Document with Matplotlib
+
+This is a simple Quarto document that demonstrates how to create a matplotlib graph and render it as HTML.
+
+## Sample Data Visualization
+
+Let's create a simple line plot using matplotlib:
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2, label='sin(x)')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.title('Simple Sine Wave Plot')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+```
+
+## Additional Plot Example
+
+Here's another example with multiple data series:
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create sample data
+x = np.linspace(0, 2*np.pi, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.sin(x) * np.cos(x)
+
+# Create the plot
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 1, 1)
+plt.plot(x, y1, 'r-', label='sin(x)', linewidth=2)
+plt.plot(x, y2, 'g-', label='cos(x)', linewidth=2)
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.title('Trigonometric Functions')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.subplot(2, 1, 2)
+plt.plot(x, y3, 'purple', linewidth=2, label='sin(x) * cos(x)')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.title('Product of sin(x) and cos(x)')
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+## Conclusion
+
+This document demonstrates how to:
+- Create a Quarto markdown file
+- Include Python code blocks with matplotlib
+- Render plots in HTML format
+- Use proper document formatting with YAML front matter
+
+The plots will be automatically embedded in the HTML output when you render this document.
