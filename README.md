@@ -1,2 +1,2 @@
-# ChrisM-Quatro-Portfolio
+# ChrisM-Quarto-Portfolio
 My Quatro data visualization portfolio. 
